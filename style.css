@@ -1,0 +1,180 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #6b8ce3, #f9f9f9);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 15px;
+    color: #333;
+    text-shadow: 1px 1px 2px #aaa;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    gap: 1px;
+    background: #333;
+    border-radius: 10px;
+    user-select: none;
+    margin: 0 auto 20px auto;
+    width: 500px;
+    height: 500px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.cell {
+    background: #f0f0f0;
+    position: relative;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+}
+
+.cell:nth-child(odd) {
+    background: #e0e6f2;
+}
+
+.pawn {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    transition: all 0.5s ease;
+    border: 2px solid #555;
+    top: 5px;
+}
+
+#pawn1 {
+    background-color: #d9534f; /* merah */
+    left: 5px;
+    z-index: 10;
+}
+
+#pawn2 {
+    background-color: #f0ad4e; /* kuning */
+    right: 5px;
+    z-index: 10;
+}
+
+#info {
+    margin-bottom: 20px;
+}
+
+#dice-result {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #222;
+    text-shadow: 1px 1px 3px #ccc;
+}
+
+#roll-btn {
+    padding: 10px 25px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    border: none;
+    background-color: #5cb85c;
+    color: white;
+    box-shadow: 0 4px #4cae4c;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#roll-btn:active {
+    background-color: #4cae4c;
+    box-shadow: 0 2px #398439;
+    transform: translateY(2px);
+}
+
+#turn-info {
+    font-weight: 600;
+    font-size: 18px;
+    margin-top: 10px;
+    color: #444;
+}
+
+#question-modal, #winner-modal {
+    position: fixed;
+    top: 0; left: 0; right:0; bottom:0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#question-modal > div, #winner-modal > div {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 12px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+#question-text {
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #222;
+}
+
+.option-btn {
+    display: block;
+    background-color: #6b8ce3;
+    color: white;
+    border: none;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.option-btn:hover {
+    background-color: #5674d1;
+}
+
+.hidden {
+    display: none;
+}
+
+#winner-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #5cb85c;
+    margin-bottom: 20px;
+}
+
+#winner-modal button {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#winner-modal button:hover {
+    background-color: #4cae4c;
+}
